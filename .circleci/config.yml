@@ -29,8 +29,8 @@ jobs:
           at: ~/repo
       - run: sudo pip install awscli
       - run: |
-          aws s3 rm s3://longnh --recursive --region ap-southeast-1
-          aws s3 cp ~/repo/dist/* s3://longnh/ --region ap-southeast-1
+          aws s3 rm s3://longnh/ --recursive --region ap-southeast-1
+          aws s3 cp ~/repo/dist/ s3://longnh/ --recursive --region ap-southeast-1
 
 workflows:
   version: 2
