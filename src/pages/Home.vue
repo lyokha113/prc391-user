@@ -19,32 +19,37 @@
                   <v-icon style="font-size: 16px">{{ item.icon }}</v-icon>
                 </v-list-tile-action>
                 <v-list-tile-content>
-                  <v-list-tile-title
-                    style="font-size: 15px"
-                    v-text="item.title"
-                  ></v-list-tile-title>
+                  <v-list-tile-title style="font-size: 15px" v-text="item.title"></v-list-tile-title>
                 </v-list-tile-content>
               </v-list-tile>
             </v-list>
           </v-flex>
           <v-flex xs9>
-            <Banner />
+            <Banner/>
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex xs12>
-        <ProductAgile :content="currentBid" />
+      <v-flex xs12 v-if="allBidding.name !== ''">
+        <ProductAgile :content="allBidding"/>
       </v-flex>
     </v-layout>
-    <Service />
+    <Service/>
   </v-container>
 </template>
 <script>
 import Banner from '@/layouts/Banner'
 import Service from '@/layouts/Service'
 import ProductAgile from '@/components/ProductAgile'
-
 export default {
+  created() {
+    let method = 'GET'
+    let url = this.$store.state.api.getAllBidding
+    this.callAxios(method, url).then(result => {
+      this.allBidding.name = 'Tất cả phiên đấu'
+      this.allBidding.listProduct = result.data.data
+      console.log(this.allBidding)
+    })
+  },
   components: {
     Banner,
     ProductAgile,
@@ -94,8 +99,11 @@ export default {
           icon: 'fa-building'
         }
       ],
+      allBidding: {
+        name: ''
+      },
       currentBid: {
-        name: 'Phiên đang đấu',
+        name: 'Tất cả phiên đấu',
         listProduct: [
           {
             productId: 1,

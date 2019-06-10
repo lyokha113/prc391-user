@@ -8,7 +8,11 @@ export default new Vuex.Store({
     hostname: 'prc391.ml',
     api: {
       login: 'http://www.prc391.ml/login',
-      register: 'http://www.prc391.ml/register'
+      register: 'http://www.prc391.ml/register',
+
+      //bidding
+      getAllBidding: 'http://www.prc391.ml/bids',
+      getBiddingDetail: 'http://www.prc391.ml/bid/'
     }
   }
 })

@@ -1,6 +1,6 @@
 .DS_Store
-/e-broker-customer/node_modules
-/e-broker-customer/dist
+node_modules
+dist
 
 # local env files
 .env.local

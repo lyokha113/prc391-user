@@ -4,14 +4,7 @@
       <v-container class="pb-1">
         <v-layout wrap>
           <v-flex xs12 sm12 md4 class="subheading">
-            <v-img
-              id="logo"
-              :src="logoImg"
-              :height="150"
-              class="mb-3"
-              lazyload
-              :width="270"
-            />
+            <v-img id="logo" :src="logoImg" :height="150" class="mb-3" lazyload :width="270"/>
             <p>Giấy phép kinh doanh:</p>
             <p>Trụ sở chính: 100 Trần Hưng Đạo, phường Cầu Kho, Quận 1</p>
             <p>Hotline: 028 21521245</p>
@@ -20,7 +13,7 @@
           </v-flex>
           <v-flex id="footer-content" xs12 sm12 md8 class="pt-4">
             <!-- News -->
-            <FooterNews />
+            <FooterNews/>
             <v-layout row wrap>
               <!-- Social icons -->
               <v-flex class="px-1" xs12 sm5 md5>
@@ -53,7 +46,7 @@
     </v-footer>
     <v-footer id="copyright" class="justify-center white--text">
       @2019 -
-      <strong>&nbsp;Sài Gòn Đấu Giá</strong>
+      <strong>&nbsp;Đấu Giá</strong>
     </v-footer>
   </div>
 </template>

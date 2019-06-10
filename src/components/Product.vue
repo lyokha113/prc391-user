@@ -1,16 +1,21 @@
 <template>
   <v-card class="mx-auto" height="300">
-    <v-img
-      height="190"
-      src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-    ></v-img>
-
-    <v-card-title>
-      <span class="text-truncate black--text subheading">{{
-        content.name
-      }}</span>
+    <!-- <v-img height="190" :src="content.product.images[0].image"></v-img> -->
+    <v-img height="190" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+    <v-card-title class="pb-0">
+      <span class="text-truncate black--text subheading">
+        {{
+        content.product.name
+        }}
+      </span>
     </v-card-title>
-
+    <v-flex xs12 class="text-xs-center">
+      <span class="product-price">
+        {{
+        content.currentPrice
+        }}
+      </span>
+    </v-flex>
     <v-layout row justify-center>
       <v-flex xs10 class="product-timer" row>
         <v-layout>
@@ -33,7 +38,15 @@
 
 <script>
 export default {
-  props: { content: Object },
+  created() {
+    console.log(this.content)
+  },
+  props: {
+    content: {
+      type: Object,
+      default: null
+    }
+  },
   data() {
     return {}
   }
@@ -81,5 +94,11 @@ export default {
   line-height: 40px;
   font-size: 20px !important;
   font-weight: 500;
+}
+
+.product-price {
+  font-size: 17px !important;
+  color: #e47328 !important;
+  font-weight: bold;
 }
 </style>

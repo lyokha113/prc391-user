@@ -3,35 +3,22 @@
     <div class="form-container sign-up-container">
       <form @submit.prevent="register">
         <h1>TẠO TÀI KHOẢN</h1>
-        <input v-model="userRegister.fullName" type="text" placeholder="Tên" />
+        <input v-model="userRegister.fullName" type="text" placeholder="Tên">
         <input
           id="emailRegisterField"
           v-model="userRegister.email"
           type="email"
           placeholder="Email"
-        />
-        <input
-          v-model="userRegister.password"
-          type="password"
-          placeholder="Mật khẩu"
-        />
+        >
+        <input v-model="userRegister.password" type="password" placeholder="Mật khẩu">
         <button>Đăng Ký</button>
       </form>
     </div>
     <div class="form-container sign-in-container">
       <form @submit.prevent="login">
         <h1>ĐĂNG NHẬP</h1>
-        <input
-          id="emailLoginField"
-          v-model="userLogin.email"
-          type="email"
-          placeholder="Email"
-        />
-        <input
-          v-model="userLogin.password"
-          type="password"
-          placeholder="Mật khẩu"
-        />
+        <input id="emailLoginField" v-model="userLogin.email" type="email" placeholder="Email">
+        <input v-model="userLogin.password" type="password" placeholder="Mật khẩu">
         <a href="#">Quên mật khẩu ?</a>
         <button>Xác Nhận</button>
       </form>
@@ -82,14 +69,16 @@ export default {
       const isValidEmail = document
         .getElementById('emailLoginField')
         .checkValidity()
+
       if (this.userLogin.email && isValidEmail) {
-        this.callAxios('POST', this.$store.state.api.login, this.userLogin)
-          .then(data => {
-            console.log(data.data)
-            var token = data.data.data.accessToken
-            localStorage.setItem('access-token', token)
-          })
-          .catch(error => console.error(error))
+        const method = 'POST'
+        const url = this.$store.state.api.login
+        const data = this.userLogin
+        this.callAxios(method, url, data).then(data => {
+          console.log(data.data)
+          // var token = data.data.data.accessToken
+          // localStorage.setItem('access-token', token)
+        })
       }
     },
     register() {
@@ -97,11 +86,11 @@ export default {
         .getElementById('emailRegisterField')
         .checkValidity()
       if (this.userRegister.email && isValidEmail) {
-        this.callAxios(
-          'POST',
-          this.$store.state.api.register,
-          this.userRegister
-        )
+        const method = 'POST'
+        const url = this.$store.state.api.register
+        const data = this.userRegister
+
+        this.callAxios(method, url, data)
           .then(data => {
             this.snackbar = true
             console.log(data.data)
