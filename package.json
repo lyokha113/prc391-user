@@ -1,8 +1,9 @@
 {
-  "name": "auction-user",
+  "name": "chesst-frontend",
   "version": "0.0.1",
-  "description": "Cloud Computing project FPT - User frontend webpage",
-  "productName": "Cloud Computing project FPT - User frontend webpage",
+  "description": "Chess",
+  "productName": "Chess Website",
+  "author": "ldh243 <ldh243@gmail.com>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,14 +11,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "vue-agile": "^1.0.10",
     "vue-router": "^3.0.3",
     "vuetify": "^1.5.5",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "@vue/cli-plugin-babel": "^3.7.0",
     "@vue/cli-plugin-eslint": "^3.7.0",
     "@vue/cli-service": "^3.7.0",
@@ -25,6 +28,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "material-design-icons-iconfont": "^5.0.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-cli-plugin-vuetify": "^0.5.0",

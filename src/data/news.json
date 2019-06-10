@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "name": "VỀ CHÚNG TÔI",
+    "footer": true,
+    "news": [
+      {
+        "id": 1,
+        "avatar": "http://saigonauction.vn/Data/Giấy phép kinh doanh.png",
+        "title": "Giới thiệu công ty",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 1
+      },
+      {
+        "id": 2,
+        "avatar": "http://saigonauction.vn/Data/daugia.jpg",
+        "title": "Quy chế hoạt động sàn",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 1
+      },
+      {
+        "id": 3,
+        "avatar": "http://saigonauction.vn/Data/GIỚI THIỆU VỀ SÀN ĐẤU GIÁ.docx",
+        "title": "Giới thiệu về sàn đấu giá",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "HƯỚNG DẪN",
+    "footer": true,
+    "news": [
+      {
+        "id": 4,
+        "avatar": "https://taodoituong.com/wp-content/uploads/2017/07/facebook-ads-chuyen-sau.jpg",
+        "title": "Hướng dẫn tham gia mua bán - đấu giá",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 2
+      },
+      {
+        "id": 5,
+        "avatar": "http://xedaptot.com.vn/upload/images/huong-dan-thanh-toan.jpg",
+        "title": "Hướng dẫn thanh toán",
+        "content": "<p><strong>HƯỚNG DẪN THANH TO&Aacute;N</strong></p>",
+        "type": 2
+      },
+      {
+        "id": 6,
+        "avatar": "http://saigonauction.vn/Data/1",
+        "title": "Câu hỏi thường gặp",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p><p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 2
+      },
+      {
+        "id": 9,
+        "avatar": "http://saigonauction.vn/Data/1",
+        "title": "Câu hỏi thường gặp phần 2",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p><p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 2
+      },
+      {
+        "id": 7,
+        "avatar": "http://saigonauction.vn/Data/HƯỚNG DẪN ĐĂNG KÝ THÀNH VIÊN.docx",
+        "title": "Hướng dẫn đăng ký thành viên",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "LIÊN HỆ",
+    "footer": true,
+    "news": [
+      {
+        "id": 8,
+        "avatar": "http://saigonauction.vn/Data/HƯỚNG DẪN ĐĂNG KÝ THÀNH VIÊN.docx",
+        "title": "Thông tin liên hệ",
+        "content": "<p data-f-id=\"pbf\" style=\"text-align: center; font-size: 14px; margin-top: 30px; opacity: 0.65; font-family: sans-serif;\">Powered by <a href=\"https://www.froala.com/wysiwyg-editor?pb=1\" title=\"Froala Editor\">Froala Editor</a></p>",
+        "type": 3
+      }
+    ]
+  }
+]
