@@ -4,16 +4,12 @@
     <v-img height="190" :src="content.product.images[0].image"></v-img>
     <v-card-title class="pb-0">
       <span class="text-truncate black--text subheading">
-        {{
-        content.product.name
-        }}
+        {{ content.product.name }}
       </span>
     </v-card-title>
     <v-flex xs12 class="text-xs-center">
       <span class="product-price">
-        {{
-        content.currentPrice
-        }}
+        {{ content.currentPrice }}
       </span>
     </v-flex>
     <v-layout row justify-center>

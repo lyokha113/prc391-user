@@ -13,9 +13,14 @@
 
     <!-- co 2 sp nen deo de agile duoc -->
     <v-layout row>
-      <v-flex xs3 v-for="(item, index) in content.listProduct" :key="index" class="ml-2">
+      <v-flex
+        v-for="(item, index) in content.listProduct"
+        :key="index"
+        xs3
+        class="ml-2"
+      >
         <router-link :to="'/product/' + item.id">
-          <Product :content="item"/>
+          <Product :content="item" />
         </router-link>
       </v-flex>
     </v-layout>

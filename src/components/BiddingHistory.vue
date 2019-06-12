@@ -4,7 +4,7 @@
       <h3>Lịch sử đấu giá</h3>
     </v-card-title>
     <v-data-table
-      :items="desserts"
+      :items="histories"
       :headers="headers"
       class="elevation-1"
       hide-actions
@@ -13,13 +13,13 @@
         <td>{{ props.item.name }}</td>
         <td class="text-xs-center">{{ props.item.price }}</td>
         <td class="text-xs-center">{{ props.item.time }}</td>
-        <td class="text-xs-center">{{ props.item.status }}</td>
       </template>
     </v-data-table>
   </div>
 </template>
 
 <script>
+import { db } from '@/plugins/firebase'
 export default {
   data() {
     return {
@@ -31,48 +31,20 @@ export default {
           value: 'name'
         },
         { text: 'Giá đấu', value: 'price', sortable: false, align: 'center' },
-        { text: 'Thời gian', value: 'time', sortable: false, align: 'center' },
-        {
-          text: 'Trạng thái',
-          value: 'status',
-          sortable: false,
-          align: 'center'
-        }
+        { text: 'Thời gian', value: 'time', sortable: false, align: 'center' }
       ],
-      desserts: [
-        {
-          name: 'Lê Minh Dui',
-          price: 159,
-          time: 6.0,
-          status: 24
-        },
-        {
-          name: 'Lê Minh Dui',
-          price: 159,
-          time: 6.0,
-          status: 24
-        },
-        {
-          name: 'Lê Minh Dui',
-          price: 159,
-          time: 6.0,
-          status: 24
-        },
-        {
-          name: 'Lê Minh Dui',
-          price: 159,
-          time: 6.0,
-          status: 24
-        },
-        {
-          name: 'Lê Minh Dui',
-          price: 159,
-          time: 6.0,
-          status: 24
-        }
-      ]
+      histories: []
     }
-  }
+  },
+  firestore() {
+    return {
+      bidding: db.collection('bidding')
+    }
+  },
+  mounted() {
+    console.log(this.$firestore.bidding)
+  },
+  methods: {}
 }
 </script>
 

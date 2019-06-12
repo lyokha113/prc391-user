@@ -5,13 +5,13 @@
         <v-icon>mdi-chevron-right</v-icon>
       </template>
     </v-breadcrumbs>
-    <v-layout column v-if="bidding != null">
+    <v-layout v-if="bidding != null" column>
       <v-flex xs12 mb-3>
         <v-layout row>
           <v-flex xs4>
             <v-carousel :height="350" hide-delimiters>
               <v-carousel-item
-                v-for="(item,i) in bidding.product.images"
+                v-for="(item, i) in bidding.product.images"
                 :key="i"
                 :src="item.image"
               ></v-carousel-item>
@@ -25,7 +25,11 @@
               <v-flex>Thời gian kết thúc: {{ bidding.endTime }}</v-flex>
               <v-flex>Giá hiện tại: {{ bidding.currentPrice }}</v-flex>
               <v-flex>
-                <v-select :items="selectedPrice" label="Chọn giá" suffix="VNĐ"></v-select>
+                <v-select
+                  :items="selectedPrice"
+                  label="Chọn giá"
+                  suffix="VNĐ"
+                ></v-select>
                 <v-btn class="bg-color white--text ma-0">
                   <template>
                     <span class="mr-2">
@@ -40,7 +44,7 @@
         </v-layout>
       </v-flex>
       <v-flex xs12>
-        <BiddingHistory/>
+        <BiddingHistory />
       </v-flex>
     </v-layout>
   </v-container>
@@ -48,16 +52,9 @@
 
 <script>
 import BiddingHistory from '@/components/BiddingHistory'
+import { RepositoryFactory } from '@/repository/RepositoryFactory'
+const biddingRepository = RepositoryFactory.get('bidding')
 export default {
-  mounted() {
-    let method = 'GET'
-    let url = this.$store.state.api.getBiddingDetail + this.bidding.id
-    this.callAxios(method, url).then(result => {
-      // this.product = result.data.data
-      this.bidding = result.data.data.bidding
-      this.selectedPrice = result.data.data.bidPrices
-    })
-  },
   components: {
     BiddingHistory
   },
@@ -75,13 +72,20 @@ export default {
           href: 'breadcrumbs_link_1'
         }
       ],
-      bidding: {
-        id: this.$route.params.productId,
-        currentPrice: '',
-        endTime: '',
-        product: { name: '', images: [{ image: '' }] }
-      },
+      bidding: null,
       selectedPrice: []
+    }
+  },
+  mounted() {
+    this.getBiding()
+  },
+  methods: {
+    async getBiding() {
+      const { data } = await biddingRepository.getBidding(
+        this.$route.params.productId
+      )
+      this.bidding = data.data.bidding
+      this.selectedPrice = data.data.bidPrices
     }
   }
 }
