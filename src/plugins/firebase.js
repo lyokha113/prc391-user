@@ -6,13 +6,13 @@ import '@firebase/firestore'
 Vue.use(VueFirestore)
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: 'AIzaSyAFrrijRaop6c-_9GWpr4Kj61nc-Mdyjf8',
-  authDomain: 'prc391-243518.firebaseapp.com',
-  databaseURL: 'https://prc391-243518.firebaseio.com',
-  projectId: 'prc391-243518',
-  storageBucket: '',
-  messagingSenderId: '569202403609',
-  appId: '1:569202403609:web:1c49ae247b232a78'
+  apiKey: 'AIzaSyDLq7b_dC-VX2dcJf-Z2RMdws6-skkxGhA',
+  authDomain: 't-door-243518.firebaseapp.com',
+  databaseURL: 'https://t-door-243518.firebaseio.com',
+  projectId: 't-door-243518',
+  storageBucket: 't-door-243518.appspot.com',
+  messagingSenderId: '623288961829',
+  appId: '1:623288961829:web:1b857761ec3259d0'
 })
 
 export const db = firebaseApp.firestore()

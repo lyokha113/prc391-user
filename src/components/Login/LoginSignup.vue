@@ -21,12 +21,7 @@
     <div class="form-container sign-in-container">
       <form @submit.prevent="login">
         <h1>ĐĂNG NHẬP</h1>
-        <input
-          id="emailLoginField"
-          v-model="userLogin.email"
-          type="email"
-          placeholder="Email"
-        />
+        <input v-model="userLogin.email" type="email" placeholder="Email" />
         <input
           v-model="userLogin.password"
           type="password"
@@ -61,13 +56,15 @@
 </template>
 
 <script>
+import { RepositoryFactory } from '@/repository/RepositoryFactory'
+const userRepository = RepositoryFactory.get('user')
 export default {
   data() {
     return {
       rightPanel: false,
       userLogin: {
-        email: 'ldh243@gmail.com',
-        password: '123'
+        email: null,
+        password: null
       },
       userRegister: {
         email: '',
@@ -78,20 +75,18 @@ export default {
     }
   },
   methods: {
-    login() {
-      const isValidEmail = document
-        .getElementById('emailLoginField')
-        .checkValidity()
-
-      if (this.userLogin.email && isValidEmail) {
-        const method = 'POST'
-        const url = this.$store.state.api.login
-        const data = this.userLogin
-        this.callAxios(method, url, data).then(data => {
-          console.log(data.data)
-          // var token = data.data.data.accessToken
-          // localStorage.setItem('access-token', token)
-        })
+    async login() {
+      if (this.userLogin.email != null && this.userLogin.password != null) {
+        const { data } = await userRepository.login(
+          this.userLogin.email,
+          this.userLogin.password
+        )
+        if (data.success) {
+          this.$store.commit(
+            'setUserToken',
+            `${data.data.tokenType} ${data.data.accessToken}`
+          )
+        }
       }
     },
     register() {

@@ -1,7 +1,9 @@
 import BiddingRepository from '@/repository/BiddingRepository'
+import UserRepository from '@/repository/UserRepository'
 
 const repositories = {
-  bidding: BiddingRepository
+  bidding: BiddingRepository,
+  user: UserRepository
 }
 
 export const RepositoryFactory = {

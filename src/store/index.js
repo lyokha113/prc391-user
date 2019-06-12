@@ -5,12 +5,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    hostname: 'prc391.ml',
-    api: {
-      login: 'http://www.prc391.ml/login',
-      register: 'http://www.prc391.ml/register',
-      getAllBidding: 'http://www.prc391.ml/bids',
-      getBiddingDetail: 'http://www.prc391.ml/bid/'
+    userToken:
+      localStorage.getItem('userToken') == undefined
+        ? null
+        : localStorage.getItem('userToken')
+  },
+  getter: {},
+  mutations: {
+    setUserToken(state, payload) {
+      state.userToken = payload
+      localStorage.setItem('userToken', payload)
     }
   }
 })

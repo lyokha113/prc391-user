@@ -10,7 +10,7 @@
       hide-actions
     >
       <template v-slot:items="props">
-        <td>{{ props.item.name }}</td>
+        <td>{{ props.item.accountName }}</td>
         <td class="text-xs-center">{{ props.item.price }}</td>
         <td class="text-xs-center">{{ props.item.time }}</td>
       </template>
@@ -38,13 +38,22 @@ export default {
   },
   firestore() {
     return {
-      bidding: db.collection('bidding')
+      histories: db
+        .collection('bidding')
+        .where('biddingId', '==', this.$route.params.productId)
     }
-  },
-  mounted() {
-    console.log(this.$firestore.bidding)
-  },
-  methods: {}
+  }
+  // computed: {
+  //   getHistories() {
+  //     console.log(this.histories)
+  //     this.histories.forEach(h => {
+  //       const date = new Date(h.time.seconds * 1000).toLocaleString()
+  //       h.time = date
+  //     })
+
+  //     return this.histories
+  //   }
+  // }
 }
 </script>
 

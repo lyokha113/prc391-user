@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseDomain = 'http://localhost:5000'
+const baseDomain = 'http://prc391.ml'
 const baseURL = `${baseDomain}`
 
 export default axios.create({
@@ -8,6 +8,7 @@ export default axios.create({
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    Authorization: localStorage.getItem('userToken')
   }
 })

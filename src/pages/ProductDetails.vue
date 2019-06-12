@@ -26,16 +26,15 @@
               <v-flex>Giá hiện tại: {{ bidding.currentPrice }}</v-flex>
               <v-flex>
                 <v-select
-                  :items="selectedPrice"
+                  v-model="selectedPrice"
+                  :items="bidPrices"
                   label="Chọn giá"
                   suffix="VNĐ"
                 ></v-select>
-                <v-btn class="bg-color white--text ma-0">
-                  <template>
-                    <span class="mr-2">
-                      <v-icon>fa-gavel</v-icon>
-                    </span>
-                  </template>
+                <v-btn class="bg-color white--text ma-0" @click="bid">
+                  <span class="mr-2">
+                    <v-icon>fa-gavel</v-icon>
+                  </span>
                   Đấu giá
                 </v-btn>
               </v-flex>
@@ -73,7 +72,8 @@ export default {
         }
       ],
       bidding: null,
-      selectedPrice: []
+      bidPrices: [],
+      selectedPrice: null
     }
   },
   mounted() {
@@ -85,7 +85,14 @@ export default {
         this.$route.params.productId
       )
       this.bidding = data.data.bidding
-      this.selectedPrice = data.data.bidPrices
+      this.bidPrices = data.data.bidPrices
+    },
+    async bid() {
+      await biddingRepository.bid(
+        this.$route.params.productId,
+        this.selectedPrice
+      )
+      await this.getBiding()
     }
   }
 }
