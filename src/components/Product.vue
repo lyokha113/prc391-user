@@ -1,7 +1,7 @@
 <template>
   <v-card class="mx-auto" height="300">
     <!-- <v-img height="190" :src="content.product.images[0].image"></v-img> -->
-    <v-img height="190" src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
+    <v-img height="190" :src="content.product.images[0].image"></v-img>
     <v-card-title class="pb-0">
       <span class="text-truncate black--text subheading">
         {{
@@ -38,9 +38,6 @@
 
 <script>
 export default {
-  created() {
-    console.log(this.content)
-  },
   props: {
     content: {
       type: Object,

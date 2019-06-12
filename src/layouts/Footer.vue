@@ -1,22 +1,13 @@
 <template>
   <div>
     <v-footer id="footer" class="white--text" height="auto">
-      <v-container class="pb-1">
-        <v-layout wrap>
-          <v-flex xs12 sm12 md4 class="subheading">
-            <v-img id="logo" :src="logoImg" :height="150" class="mb-3" lazyload :width="270"/>
-            <p>Giấy phép kinh doanh:</p>
-            <p>Trụ sở chính: 100 Trần Hưng Đạo, phường Cầu Kho, Quận 1</p>
-            <p>Hotline: 028 21521245</p>
-            <p>Số Fax:</p>
-            <p class="font-weight-bold">Website đang chạy thử nghiệm</p>
-          </v-flex>
-          <v-flex id="footer-content" xs12 sm12 md8 class="pt-4">
+      <v-container class="py-2">
+        <v-layout wrap justify-center>
+          <v-flex id="footer-content" xs8>
             <!-- News -->
-            <FooterNews/>
-            <v-layout row wrap>
+            <v-layout row wrap justify-center>
               <!-- Social icons -->
-              <v-flex class="px-1" xs12 sm5 md5>
+              <v-flex class="px-1" xs5>
                 <v-img
                   v-for="(icon, index) in socialIcons"
                   :key="index"
@@ -28,7 +19,7 @@
                 />
               </v-flex>
               <!-- Store icons -->
-              <v-flex class="px-1" xs12 sm7 md7>
+              <v-flex class="px-1" xs6>
                 <v-img
                   v-for="(icon, index) in storeIcons"
                   :key="index"

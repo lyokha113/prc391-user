@@ -5,11 +5,17 @@
         <v-icon>mdi-chevron-right</v-icon>
       </template>
     </v-breadcrumbs>
-    <v-layout column>
+    <v-layout column v-if="bidding != null">
       <v-flex xs12 mb-3>
         <v-layout row>
           <v-flex xs4>
-            <v-img :src="bidding.product.images[0].image" height="350"></v-img>
+            <v-carousel :height="350" hide-delimiters>
+              <v-carousel-item
+                v-for="(item,i) in bidding.product.images"
+                :key="i"
+                :src="item.image"
+              ></v-carousel-item>
+            </v-carousel>
           </v-flex>
           <v-flex xs5 ml-4>
             <v-layout column>
@@ -43,13 +49,11 @@
 <script>
 import BiddingHistory from '@/components/BiddingHistory'
 export default {
-  created() {
+  mounted() {
     let method = 'GET'
     let url = this.$store.state.api.getBiddingDetail + this.bidding.id
-    console.log(url)
     this.callAxios(method, url).then(result => {
       // this.product = result.data.data
-      console.log(result.data.data)
       this.bidding = result.data.data.bidding
       this.selectedPrice = result.data.data.bidPrices
     })
@@ -71,18 +75,11 @@ export default {
           href: 'breadcrumbs_link_1'
         }
       ],
-      // product: {
-      //   id: this.$route.params.productId,
-      //   image: require('@/assets/images/product.png'),
-      //   name: 'Nón kết sơn logo da, mũ nón sơn',
-      //   currentPrice: '19.000đ',
-      //   timeExpired: '00 : 03 : 21'
-      // },
       bidding: {
         id: this.$route.params.productId,
         currentPrice: '',
         endTime: '',
-        product: { name: '', images: [] }
+        product: { name: '', images: [{ image: '' }] }
       },
       selectedPrice: []
     }
@@ -90,4 +87,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.theme--dark.v-btn {
+  color: black;
+}
+</style>

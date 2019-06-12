@@ -41,7 +41,7 @@ import Banner from '@/layouts/Banner'
 import Service from '@/layouts/Service'
 import ProductAgile from '@/components/ProductAgile'
 export default {
-  created() {
+  mounted() {
     let method = 'GET'
     let url = this.$store.state.api.getAllBidding
     this.callAxios(method, url).then(result => {
@@ -101,35 +101,6 @@ export default {
       ],
       allBidding: {
         name: ''
-      },
-      currentBid: {
-        name: 'Tất cả phiên đấu',
-        listProduct: [
-          {
-            productId: 1,
-            name: 'Điện thoại số 1'
-          },
-          {
-            productId: 2,
-            name: 'Điện thoại số 2'
-          },
-          {
-            productId: 3,
-            name: 'Điện thoại số 3'
-          },
-          {
-            productId: 4,
-            name: 'Điện thoại số 4'
-          },
-          {
-            productId: 5,
-            name: 'Điện thoại số 5'
-          },
-          {
-            productId: 6,
-            name: 'Điện thoại số 6'
-          }
-        ]
       }
     }
   }
